@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/utsav32/api-test-playwright.git'
+                git branch: 'master', url: 'https://github.com/utsav32/api-test-playwright.git'
             }
         }
 
