@@ -36,15 +36,8 @@ pipeline {
 
     post {
         always {
-            // Publish the HTML report (optional)
-            publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'Playwright HTML Report'
-            ]
+            // Archive test results (if using Playwright's JUnit reporter)
+            junit 'test-results/*.xml'
         }
     }
 }
