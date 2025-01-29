@@ -12,4 +12,8 @@ export default defineConfig({
       Authorization: `${process.env.API_TOKEN}`,
     },
   },
+  reporter: [
+    ["html", { outputFolder: "playwright-report" }], // HTML reporter
+    ["junit", { outputFile: "test-results/results.xml" }], // JUnit reporter
+  ],
 });
