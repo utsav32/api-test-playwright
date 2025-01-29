@@ -16,6 +16,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm install -D @playwright/test'
+                sh 'npx playwright install --with-deps'
             }
         }
 
