@@ -17,10 +17,8 @@ for (const data of credentials) {
     await page.getByRole("button", { name: "Login" }).click();
     if (data.username === "locked_out_user") {
       await page.waitForSelector("h3");
-      expect(
-        await page.getByText(
-          "Epic sadface: Sorry, this user has been locked out."
-        )
+      await expect(
+        page.getByText("Epic sadface: Sorry, this user has been locked out.")
       ).toBeVisible();
     } else {
       await page.waitForURL("https://www.saucedemo.com/inventory.html");
